@@ -1,6 +1,100 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.github.ProgrammationMultiThread</groupId>
-  <artifactId>TP-webgrep</artifactId>
+
+  <!-- Project coordinates -->
+  <groupId>com.github.programmationmultithread</groupId>
+  <artifactId>tp-webgrep</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <name>TP WebGrep – Concurrent Multithreaded Programming</name>
+  <description>Starter code for the Practical session on web crawler.</description>
+  <url>https://github.com/ProgrammationMultiThread/TP-WebGrep</url>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>https://opensource.org/license/mit/</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <!-- Build settings -->
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>21</maven.compiler.release>
+    <junit.jupiter.version>5.11.0</junit.jupiter.version>
+    <maven.surefire.version>3.2.5</maven.surefire.version>
+    <exec.plugin.version>3.1.0</exec.plugin.version>
+    <enforcer.plugin.version>3.4.1</enforcer.plugin.version>
+    <jsoup.version>1.21.2</jsoup.version>
+  </properties>
+
+  <!-- Dependencies -->
+  <dependencies>
+    <!-- JUnit 5 -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junit.jupiter.version}</version>
+      <scope>test</scope>
+    </dependency>
+        
+    <!-- Jsoup HTML parser -->
+    <dependency>
+      <groupId>org.jsoup</groupId>
+      <artifactId>jsoup</artifactId>
+	  <version>${jsoup.version}</version>
+    </dependency>
+
+  </dependencies>
+
+  <!-- Build configuration -->
+  <build>
+    <plugins>
+      <!-- Java compilation -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.13.0</version>
+        <configuration>
+          <release>${maven.compiler.release}</release>
+        </configuration>
+      </plugin>
+
+      <!-- JUnit 5 (détection auto) -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${maven.surefire.version}</version>
+      </plugin>
+
+      <!-- (Optionnel) Garantir Java/Maven min -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>${enforcer.plugin.version}</version>
+        <executions>
+          <execution>
+            <id>enforce-versions</id>
+            <goals><goal>enforce</goal></goals>
+            <configuration>
+              <rules>
+                <requireJavaVersion>
+                  <version>[21,)</version>
+                </requireJavaVersion>
+                <requireMavenVersion>
+                  <version>[3.9,)</version>
+                </requireMavenVersion>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
 </project>

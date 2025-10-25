@@ -1,1 +1,52 @@
-/target/
+# === Build output (Maven / Gradle) ===
+target/
+build/
+
+# === IDE-specific ===
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# === OS / Misc ===
+.DS_Store
+Thumbs.db
+
+# === Logs, temp, caches ===
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# === Maven wrapper (optional if you don't use it) ===
+.mvn/wrapper/maven-wrapper.jar
+!/.mvn/wrapper/maven-wrapper.properties
+!/.mvn/wrapper/MavenWrapperDownloader.java
+
+# === Test reports ===
+surefire-reports/
+failsafe-reports/
+
+# === Dependency management (optional) ===
+# If you ever use dependency caching (Maven local repo)
+.m2/
+
+# === Generated files (doc, coverage, etc.) ===
+site/
+docs/
+coverage/
+jacoco.exec
+
+# === Java compiled classes ===
+*.class
