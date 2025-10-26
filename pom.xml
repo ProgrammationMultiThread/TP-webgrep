@@ -10,9 +10,9 @@
   <groupId>com.github.programmationmultithread</groupId>
   <artifactId>tp-webgrep</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>TP WebGrep – Concurrent Multithreaded Programming</name>
+  <name>Recherche récursive d'expressions régulières sur le Web – Concurrent Multithreaded Programming</name>
   <description>Starter code for the Practical session on web crawler.</description>
-  <url>https://github.com/ProgrammationMultiThread/TP-WebGrep</url>
+  <url>https://github.com/ProgrammationMultiThread/TP-webgrep</url>
 
   <licenses>
     <license>
